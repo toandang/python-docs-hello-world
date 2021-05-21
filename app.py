@@ -1,7 +1,13 @@
-from flask import Flask
-app = Flask(__name__)
+from flask import Flask, render_template
+import os
 
-@app.route("/")
-def hello():
-    redirect(url_for('static', filename='ds_ai_logo.png'), code=301)
-    return "Welcome to Data Services & AI Website!"
+PEOPLE_FOLDER = os.path.join('static', 'images')
+
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
+
+@app.route('/')
+@app.route('/index')
+def show_index():
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'ds_ai_logo.png')
+    return render_template("index.html", user_image = full_filename)
