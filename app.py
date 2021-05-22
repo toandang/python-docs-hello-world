@@ -17,8 +17,6 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     # return "Welcome Data Services & AI World!"
-	return redirect(url_for('', filename='images/' + 'ds_ai_logo.png'), code=301)
-
-
+    return redirect(url_for('', filename='images/' + 'ds_ai_logo.png'), code=301)
 # if __name__ == "__main__":
 #     app.run()
