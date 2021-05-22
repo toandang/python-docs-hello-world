@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 import os
 
-PEOPLE_FOLDER = os.path.join('', 'images')
+IMAGE_FOLDER = os.path.join('', 'images')
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
+app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
 
 @app.route('/')
 @app.route('/index')
