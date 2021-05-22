@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import os
 
-IMAGE_FOLDER = os.path.join('', 'images')
+IMAGE_FOLDER = os.path.join('static', '')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
